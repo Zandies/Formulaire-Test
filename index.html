@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Test formulaire (HTML/CSS + un soupçon de JQuery)</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $inscription = $('#inscription');
+        $connexion = $('#connexion');
+
+        $inscription.on('mouseover', function(){
+          $('#connexion').css({'transform': 'rotateY(-90deg)',  'filter': 'grayscale(1)'});
+        });
+
+        $connexion.on('mouseover', function(){
+          $('#connexion').css({'transform': 'translateX(50%)'});
+        });
+
+        $inscription.on('mouseout', function(){
+          $('#connexion').css({'transform': 'rotateY(0deg)', 'filter': 'grayscale(0)'});
+        });
+
+        $connexion.on('mouseout', function(){
+          $('#connexion').css({'transform': 'translateX(0)', 'opacity': '1'});
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+
+    <!-- <input type="radio" name="groupe" id="link" /> -->
+    <!-- <input type="radio" name="groupe" id="link_inscri" /> -->
+
+    <input type="radio" id="link" />
+    <input type="radio" id="link_inscri" />
+    <div class="info">
+      <h1>Bienvenue sur un site mettant en pratique un formulaire HTML5 et CSS3</h1>
+      <div class="link_label">
+        <label for="link" id="link_label">Connectez-vous</label>
+        <label for="link_inscri" id="link_label_inscri">Inscrivez-vous</label>
+      </div>
+    </div>
+
+    <!-- Box contenant les deux choix : Connexion ou Inscription -->
+
+    <div id="box_inscription-connexion">
+      <div id="connexion">
+        <p>Connexion</p>
+        <form method="post" action="">
+          <label for="connect_pseudo">Pseudo</label>
+          <input id="connect_pseudo" type="text" />
+          <label for="connect_mdp">Mot de passe</label>
+          <input id="connect_mdp" type="password" />
+          <label id="checkbox" for="connect_remember">
+          <input id="connect_remember" type="checkbox" />
+          Se souvenir de moi</label>
+          <button>Se connecter</button>
+        </form>
+      </div>
+      <div id="inscription">
+        <p>Inscription</p>
+        <form method="post" action="">
+          <label for="inscript_pseudo">Pseudo</label>
+          <input id="inscript_pseudo" type="text" />
+          <label for="inscript_mdp">Mot de passe</label>
+          <input id="inscript_mdp" type="password" />
+          <label for="inscript_mdp2">Répétez le mot de passe</label>
+          <input id="inscript_mdp2" type="password" />
+          <label for="inscript_mail">E-mail</label>
+          <input type="mail" />
+          <button>S'inscrire</button>
+        </form>
+      </div>
+  </div>
+  </body>
+</html>

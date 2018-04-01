@@ -1,0 +1,135 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+  transition: all 2s;
+  overflow: hidden;
+}
+
+div{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.info{
+  display: flex;
+  height: 100vh;
+  background-color: #2ecc42;
+  color: #fff;
+  transition: all .2s;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link_label{
+  height: 50px;
+}
+
+#link_label, #link_label_inscri{
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #27ae60;
+  margin: 5px;
+}
+
+#link, #link_inscri{
+  display: none;
+}
+
+#link:checked ~ .info{
+  margin-top: -100vh;
+}
+
+#link_inscri:checked ~ .info{
+  margin-top: -100vh;
+}
+
+#connexion{
+  background-color: #2ecc71;
+  width: 50vw;
+  flex-direction: column;
+  transition: all .3s ease-in;
+  z-index: 10;
+}
+
+#inscription{
+  background-color: #27ae60;
+  width: 50vw;
+  flex-direction: column;
+  transition: all .3s ease-in;
+  z-index: 10;
+}
+
+p{
+  color: #fff;+
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#connexion p{
+  text-shadow: -3px 3px 0px #2aad61;
+}
+
+#inscription p{
+  text-shadow: -3px 3px 0px #208a4c;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label:not(#link_label):not(#link_label_inscri){
+  color: #fff;
+  margin-left: 5%;
+  margin-bottom: -10px;
+  align-self: flex-start;
+}
+
+input:not([type="checkbox"]){
+  padding: 10px;
+  margin: 15px;
+  background-color: #378761;
+  color: #fff;
+  width: 25vw;
+  border-style: hidden;
+  border-radius: 25px;
+  padding-left: 15px;
+}
+
+[type="checkbox"]{
+  border-radius: 15px;
+}
+
+button{
+  border-style: hidden;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 15px;
+  background-color: #378761;
+  width: 15vw;
+}
+
+#box_inscription-connexion{
+  background-color: #378761;
+}
+
+#connexion:hover{
+  transform: translateX(50%);
+}
+
+#connexion:hover ~ #inscription{
+  transform: rotateY(90deg);
+  opacity: .5;
+  filter: grayscale(1);
+  z-index: 0;
+}
+
+#inscription:hover{
+  transform: translateX(-50%);
+}
